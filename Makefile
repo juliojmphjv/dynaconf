@@ -116,7 +116,7 @@ setup-pre-commit:
 
 run-pre-commit:
 	rm -rf .tox/
-	pre-commit run --files $$(find -regex '.*\.\(py\|yaml\|yml\|md\)') -v
+	pre-commit run --files $$(find -path "./venv" -prune -o -regex '.*\.\(py\|yaml\|yml\|md\)') -v
 
 pep8:
 	# Flake8 ignores
